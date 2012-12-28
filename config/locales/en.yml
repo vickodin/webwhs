@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+  login_in: "Logged in!"
+  login_error: "Email or password was invalid!"
+  input_reg_data: "To be able to manage services, you must enter the credentials."
+  sign_in:	"Sign in"
+  pass:		"Password"
+  pl_email:	"Enter your email"
+  login:	"Login"
+  remember_me: "Remember me"

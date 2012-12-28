@@ -1,18 +1,21 @@
-= render "help_login"
-%h1 Вход
+/a= render "help_login"
+%h1= t(:sign_in)
 %hr
 %div{:class => "row"}
-  %div{:class =>"span9"} Для возможности управления услугами, необходимо ввести регистрационные данные.%div{:class => "row"} &nbsp;
+  %div{:class =>"span9"}
+    = t(:input_reg_data)
+  %div{:class => "row"} &nbsp
   = render "shared/alert" 
   = form_tag sessions_path do 
-    %p= label_tag :email, "Email:" 
-    = text_field_tag :email, params[:email], :placeholder => "Введите ваш email-адрес", :class => "span3"
+    %p
+      = label_tag :email, "Email:" 
+      = text_field_tag :email, params[:email], :placeholder => t(:pl_email), :class => "span3"
   
-    %p= label_tag :password, "Пароль:" 
-    = password_field_tag :password 
-    %p= check_box_tag(:remember_me, 1, params[:remember_me])
-    Запомнить меня
-  
+    %p
+      = label_tag :password, t(:pass) + ":" 
+      = password_field_tag :password 
+    %p
+      = check_box_tag(:remember_me, 1, params[:remember_me])
+      = t(:remember_me)
     %hr
-    %p= submit_tag "Войти", :class => "btn" 
-  = end
+    %p= submit_tag t(:login), :class => "btn" 

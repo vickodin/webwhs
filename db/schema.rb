@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121227175429) do
+ActiveRecord::Schema.define(:version => 20130105073836) do
+
+  create_table "sites", :force => true do |t|
+    t.string   "name",                          :null => false
+    t.string   "title"
+    t.boolean  "active",     :default => false, :null => false
+    t.boolean  "translit",   :default => true,  :null => false
+    t.text     "head"
+    t.text     "footer"
+    t.integer  "user_id",                       :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "sites", ["user_id"], :name => "index_sites_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",            :null => false

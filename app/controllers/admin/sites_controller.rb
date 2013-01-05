@@ -1,4 +1,6 @@
 class Admin::SitesController < ApplicationController
+  layout 'admin'
+
   def show
   end
 

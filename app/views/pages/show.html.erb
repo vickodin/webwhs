@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @page.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @page.content %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @page.site_id %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @page.code %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @page.url %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @page.parent_id %>
+</p>
+
+<p>
+  <b>Lft:</b>
+  <%= @page.lft %>
+</p>
+
+<p>
+  <b>Rgt:</b>
+  <%= @page.rgt %>
+</p>
+
+<p>
+  <b>Depth:</b>
+  <%= @page.depth %>
+</p>
+
+<p>
+  <b>System:</b>
+  <%= @page.system %>
+</p>
+
+<p>
+  <b>Redirect:</b>
+  <%= @page.redirect %>
+</p>
+
+<p>
+  <b>Menu:</b>
+  <%= @page.menu %>
+</p>
+
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

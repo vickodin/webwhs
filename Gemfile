@@ -27,7 +27,11 @@ end
 
 
 group :test, :development do
-  gem "rspec-rails"
+  gem 'rspec-rails'
+end
+
+group :development do
+  gem 'haml-rails'
 end
 
 # To use ActiveModel has_secure_password

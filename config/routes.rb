@@ -6,6 +6,10 @@ Webwhs::Application.routes.draw do
   resources :sessions
   resources :users
 
+  namespace :admin do
+    resource :site
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

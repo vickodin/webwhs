@@ -1,4 +1,7 @@
 Webwhs::Application.routes.draw do
+  resources :pages
+
+
   #get "sessions/new"
   get "login" => "sessions#new", :as => "login"
   #get "signup"

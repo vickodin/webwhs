@@ -1,2 +1,8 @@
-%h1 Admin::Sites#edit
-%p Find me in app/views/admin/sites/edit.html.haml
+= simple_form_for @site, {:url => admin_site_path} do |f|
+  = f.input :name
+  = f.input :title
+  = f.input :active
+  = f.input :translit
+  = f.input :head
+  = f.input :footer
+  = f.submit

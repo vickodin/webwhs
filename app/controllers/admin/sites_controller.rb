@@ -10,10 +10,15 @@ class Admin::SitesController < ApplicationController
   end
 
   def update
+    if @site.update_attributes(params[:site])
+      flash[:success] = t('site.update_success')
+      redirect_to :action => "show"
+    else
+      render :action => "edit"
+    end
   end
   
   private
-  
   def check_the_site
     @site = current_user.site
     

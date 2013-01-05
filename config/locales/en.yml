@@ -11,3 +11,4 @@ en:
   pl_email:	"Enter your email"
   login:	"Login"
   remember_me: "Remember me"
+  require_login: "Require Login"

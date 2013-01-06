@@ -12,3 +12,5 @@ en:
   login:	"Login"
   remember_me: "Remember me"
   require_login: "Require Login"
+  base:
+    confirm_destroy: "Are you sure want to delete?"

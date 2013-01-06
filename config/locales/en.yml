@@ -12,3 +12,6 @@ en:
   login:	"Login"
   remember_me: "Remember me"
   require_login: "Require Login"
+  list_pages: "Pages list"
+  add:        "Add"
+  no_pages:   "No pages"

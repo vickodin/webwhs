@@ -13,6 +13,7 @@
         %td
           = o.name
         %td
+          = link_to t('base.download'), o.attachment_url if o.attachment?
         %td
           = link_to t('base.edit'), edit_admin_document_path(o)
           = link_to t('base.destroy'), admin_document_path(o), :method => "delete", :confirm => t('base.confirm_destroy')

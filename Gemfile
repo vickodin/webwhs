@@ -11,6 +11,7 @@ gem 'sorcery'
 gem 'jquery-rails'
 
 gem 'simple_form'
+gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.

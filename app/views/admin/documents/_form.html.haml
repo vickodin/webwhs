@@ -1,3 +1,6 @@
 = simple_form_for [:admin, @document] do |f|
   = f.input :name
+  = f.file_field :attachment
+  = f.hidden_field :attachment_cache
+
   = f.submit

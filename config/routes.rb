@@ -10,6 +10,7 @@ Webwhs::Application.routes.draw do
     resource  :site
     resources :documents, :except => [:show]
     resources :news
+    resources :feedbacks, :only => [:index, :show, :destroy]
   end
 
   # The priority is based upon order of creation:

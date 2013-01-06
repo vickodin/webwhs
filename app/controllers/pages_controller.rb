@@ -1,13 +1,9 @@
 class PagesController < ApplicationController
-  # GET /pages
-  # GET /pages.json
-  def index
-    @pages = Page.all
+  layout 'admin'
+  before_filter :require_login
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pages }
-    end
+  def index
+    
   end
 
   # GET /pages/1
@@ -15,10 +11,6 @@ class PagesController < ApplicationController
   def show
     @page = Page.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @page }
-    end
   end
 
   # GET /pages/new
@@ -26,10 +18,6 @@ class PagesController < ApplicationController
   def new
     @page = Page.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @page }
-    end
   end
 
   # GET /pages/1/edit

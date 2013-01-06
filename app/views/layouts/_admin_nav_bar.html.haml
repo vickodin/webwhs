@@ -9,3 +9,12 @@
     %ul.flyout
       %li
         = link_to t('base.new'), new_admin_document_path
+
+  %li.has-flyout
+    = link_to t('admin.nav_bar.news'), admin_news_index_path
+    %a.flyout-toggle{ :href => "#"}
+      %span
+
+    %ul.flyout
+      %li
+        = link_to t('news.new'), new_admin_news_path

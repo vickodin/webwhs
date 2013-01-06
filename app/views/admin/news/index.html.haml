@@ -1,0 +1,19 @@
+%table.twelve
+  %thead
+    %tr
+      %th
+        = t('news.name')
+      %th
+        = t('news.info')
+      %th
+        = t('news.actions')
+  %tbody
+    - @news.each do |o|
+      %tr
+        %td
+          = o.name
+        %td
+          
+        %td
+          = link_to t('edit'), edit_admin_news_path(o)
+          = link_to t('destroy'), admin_news_path(o), :method => "delete", :confirm => t('confirm_destroy')

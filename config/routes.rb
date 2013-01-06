@@ -9,6 +9,7 @@ Webwhs::Application.routes.draw do
   namespace :admin do
     resource  :site
     resources :documents, :except => [:show]
+    resources :news
   end
 
   # The priority is based upon order of creation:

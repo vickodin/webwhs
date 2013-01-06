@@ -1,0 +1,6 @@
+= simple_form_for [:admin, @news] do |f|
+  .datetime-format
+    = f.input :start
+  = f.input :name
+  = f.input :content
+  = f.submit

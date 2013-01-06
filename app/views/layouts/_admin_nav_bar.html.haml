@@ -1,5 +1,11 @@
 %ul.nav-bar
   %li
     = link_to t('admin.nav_bar.settings'), admin_site_path
-  %li
+  %li.has-flyout
     = link_to t('admin.nav_bar.documents'), admin_documents_path
+    %a.flyout-toggle{ :href => "#"}
+      %span
+
+    %ul.flyout
+      %li
+        = link_to t('base.new'), new_admin_document_path

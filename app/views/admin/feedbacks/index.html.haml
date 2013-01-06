@@ -1,0 +1,22 @@
+%table.twelve
+  %thead
+    %tr
+      %th
+        = t('feedback.name')
+      %th
+        = t('feedback.email')
+      %th
+        = t('feedback.subject')
+      %th
+        = t('feedback.actions')
+  %tbody
+    - @feedbacks.each do |o|
+      %tr
+        %td
+          = o.name
+        %td
+          = o.email
+        %td
+          = link_to o.subject, admin_feedback_path(o)
+        %td
+          = link_to t('destroy'), admin_feedback_path(o), :method => "delete", :confirm => t('confirm_destroy')

@@ -1,0 +1,23 @@
+%table.twelve
+  %thead
+    %tr
+      %th
+        = t('review.name')
+      %th
+        = t('review.email')
+      %th
+        = t('review.content')
+      %th
+        = t('feedback.actions')
+  %tbody
+    - @reviews.each do |o|
+      %tr
+        %td
+          = o.name
+        %td
+          = o.email
+        %td
+          = link_to o.content.truncate(30, :separator => " "), admin_review_path(o)
+        %td
+          = link_to t('edit'), edit_admin_review_path(o)
+          = link_to t('destroy'), admin_review_path(o), :method => "delete", :confirm => t('confirm_destroy')

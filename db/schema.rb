@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106130152) do
+ActiveRecord::Schema.define(:version => 20130106144645) do
+
+  create_table "components", :force => true do |t|
+    t.string   "name",                         :null => false
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "active",     :default => true, :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
 
   create_table "documents", :force => true do |t|
     t.string   "name"

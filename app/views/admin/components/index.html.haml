@@ -1,0 +1,23 @@
+%table.twelve
+  %thead
+    %tr
+      %th
+        = t('component.name')
+      %th
+        = t('component.title')
+      %th
+        = t('component.active')
+      %th
+        = t('component.actions')
+  %tbody
+    - @components.each do |o|
+      %tr
+        %td
+          = o.name
+        %td
+          = o.title
+        %td
+          = o.active
+        %td
+          = link_to t('edit'), edit_admin_component_path(o)
+          = link_to t('destroy'), admin_component_path(o), :method => "delete", :confirm => t('confirm_destroy')

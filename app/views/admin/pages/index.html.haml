@@ -1,0 +1,9 @@
+/= stylesheet_link_tag 'the_sortable_tree', :media => :screen
+/= render 'admin_nav_bar' 
+= link_to t(:add), new_admin_page_url(), :class => 'btn btn-primary' 
+= render "shared/alert"
+- if @pages.blank? 
+  = t(:no_pages)
+- else 
+  = sortable_tree @pages, :new_url => new_admin_page_path(), :id => :id, :max_levels => 4, :path => 'admin/pages/the_sortable_tree'
+

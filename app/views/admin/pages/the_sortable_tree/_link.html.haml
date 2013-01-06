@@ -1,0 +1,7 @@
+- title     = node.send opts[:title]
+- handle    = content_tag :i, '', :class => "icon-move pull-left hand"
+- link      = link_to truncate(title), edit_admin_page_url(node)
+- controls  = render(:partial  =>  "#{opts[:path]}/controls", :locals  =>  { :node => node, :opts => opts })
+- controls  = content_tag(:b, controls, :class => :controls)
+- element   = handle + controls + link
+%div{ :class => "link#{' root' if root}" }= element

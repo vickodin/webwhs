@@ -50,15 +50,6 @@ ActiveRecord::Schema.define(:version => 20130106144645) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "reviews", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "url"
-    t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.text     "content"
@@ -72,6 +63,15 @@ ActiveRecord::Schema.define(:version => 20130106144645) do
     t.boolean  "system"
     t.string   "redirect"
     t.boolean  "menu"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "url"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

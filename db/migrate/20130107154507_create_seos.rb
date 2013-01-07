@@ -4,10 +4,12 @@ class CreateSeos < ActiveRecord::Migration
       t.string :title
       t.text :keywords
       t.text :description
-      t.string :extra_type
-      t.integer :extra_id
+      t.string :extra_type, :limit => 32, :null => false
+      t.integer :extra_id, :null => false
 
       t.timestamps
     end
+    add_index :seos, :extra_type
+    add_index :seos, :extra_id
   end
 end

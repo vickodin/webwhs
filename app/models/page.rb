@@ -19,10 +19,13 @@
 class Page < ActiveRecord::Base
   include TheSortableTree::Scopes
   acts_as_nested_set
-  attr_accessible :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :system, :url
 
   before_save	:check_the_name
   has_one :seo, :as => :extra, :dependent => :destroy
+
+  accepts_nested_attributes_for :seo
+
+  attr_accessible :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :system, :url, :seo
 
   def title
   	self.name

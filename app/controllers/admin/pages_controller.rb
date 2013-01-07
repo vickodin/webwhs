@@ -20,11 +20,13 @@ class Admin::PagesController < ApplicationController
 
   def new
     @page = Page.new
+    @page.build_seo
 
   end
 
   def edit
     @page = Page.find(params[:id])
+    @page.build_seo unless @page.seo
     #@page =  Page.find_by_code(params[:id])
   end
 

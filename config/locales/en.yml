@@ -15,5 +15,8 @@ en:
   list_pages: "Pages list"
   add:        "Add"
   no_pages:   "No pages"
-
+  seo:
+    title: 'Exact title to be displayed in the browser'
+    keywords: 'Keywords to search, separated by commas'
+    description: 'Short description for search engines'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106144645) do
+ActiveRecord::Schema.define(:version => 20130107154507) do
 
   create_table "components", :force => true do |t|
     t.string   "name",                         :null => false
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(:version => 20130106144645) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "seos", :force => true do |t|
+    t.string   "title"
+    t.text     "keywords"
+    t.text     "description"
+    t.string   "extra_type"
+    t.integer  "extra_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sites", :force => true do |t|

@@ -5,8 +5,6 @@
 #  id         :integer         not null, primary key
 #  name       :string(255)
 #  content    :text
-#  site_id    :integer
-#  code       :string(255)
 #  url        :string(255)
 #  parent_id  :integer
 #  lft        :integer
@@ -21,8 +19,7 @@
 class Page < ActiveRecord::Base
   include TheSortableTree::Scopes
   acts_as_nested_set
-  attr_accessible :code, :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :site_id, :system, :url
-  belongs_to :site
+  attr_accessible :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :system, :url
 
   before_save	:check_the_name
 

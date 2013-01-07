@@ -3,8 +3,6 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.string :name
       t.text :content
-      t.integer :site_id
-      t.string :code
       t.string :url
       t.integer :parent_id
       t.integer :lft

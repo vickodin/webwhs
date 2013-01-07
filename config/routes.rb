@@ -1,6 +1,4 @@
 Webwhs::Application.routes.draw do
-  resources :pages
-
 
   #get "sessions/new"
   get "login" => "sessions#new", :as => "login"
@@ -10,7 +8,14 @@ Webwhs::Application.routes.draw do
   resources :users
 
   namespace :admin do
-    resource :site
+    resource  :site
+    resources :documents, :except => [:show]
+    resources :pages do
+      collection do
+        get :index
+        post :rebuild
+      end
+    end
   end
 
   # The priority is based upon order of creation:

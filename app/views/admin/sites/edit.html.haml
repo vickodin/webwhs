@@ -1,4 +1,4 @@
-= simple_form_for @site, {:url => admin_site_path} do |f|
+= simple_form_for [:admin, @site] do |f|
   = f.input :name
   = f.input :title
   = f.input :active

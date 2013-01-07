@@ -1,0 +1,19 @@
+%table.twelve
+  %thead
+    %tr
+      %th
+        = t('document.name')
+      %th
+        = t('document.info')
+      %th
+        = t('base.actions')
+  %tbody
+    - @documents.each do |o|
+      %tr
+        %td
+          = o.name
+        %td
+        %td
+          = link_to t('base.edit'), edit_admin_document_path(o)
+          = link_to t('base.destroy'), admin_document_path(o), :method => "delete", :confirm => t('base.confirm_destroy')
+	  

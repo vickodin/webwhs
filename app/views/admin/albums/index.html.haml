@@ -1,0 +1,4 @@
+%ul.block-grid.five-up
+  - @albums.each do |a|
+    %li
+      = link_to a.name, admin_album_path(a)

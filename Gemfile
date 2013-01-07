@@ -11,6 +11,7 @@ gem 'sorcery'
 gem 'jquery-rails'
 
 gem 'simple_form'
+gem 'rmagick'
 gem 'carrierwave'
 
 # Gems used only for assets and not required

@@ -13,6 +13,8 @@ Webwhs::Application.routes.draw do
     resources :feedbacks, :only => [:index, :show, :destroy]
     resources :reviews
     resources :components, :except => [:show]
+    resources :albums
+    resources :images
   end
 
   # The priority is based upon order of creation:

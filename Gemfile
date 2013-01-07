@@ -12,6 +12,9 @@ gem 'jquery-rails'
 
 gem 'simple_form'
 gem 'carrierwave'
+gem 'awesome_nested_set'
+gem 'the_sortable_tree'
+gem 'ckeditor'
 
 # Gems used only for assets and not required
 # in production environments by default.

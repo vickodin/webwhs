@@ -1,4 +1,5 @@
 Webwhs::Application.routes.draw do
+
   #get "sessions/new"
   get "login" => "sessions#new", :as => "login"
   #get "signup"
@@ -13,6 +14,12 @@ Webwhs::Application.routes.draw do
     resources :feedbacks, :only => [:index, :show, :destroy]
     resources :reviews
     resources :components, :except => [:show]
+    resources :pages do
+      collection do
+        get :index
+        post :rebuild
+      end
+    end
   end
 
   # The priority is based upon order of creation:

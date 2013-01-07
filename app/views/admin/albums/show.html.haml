@@ -1,5 +1,5 @@
 %ul.block-grid.five-up
   - @images.each do |i|
     %li
-      = link_to i.name, admin_image_path(i)
+      = link_to image_tag(i.picture_url(:thumb), :title => i.name), admin_image_path(i)
   

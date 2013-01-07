@@ -21,7 +21,7 @@ class Admin::AlbumsController < ApplicationController
   def create
     @album = Album.new(params[:album])
     if @album.save
-      redirect_to admin_images_path
+      redirect_to :action => "index"
     else
       render :action => "new"
     end

@@ -1,9 +1,2 @@
-= render 'shared/nav' 
-= render :partial => 'shared/info', :locals => {:data => [t(:list_pages), "#{link_to t(:add), new_site_page_url(@site.code), :class => 'btn btn-primary'}"]} 
-= render "shared/alert"
-- if @pages.blank? 
-  = alert( t(:no_pages))
-- else 
-  = sortable_tree @pages, :new_url => new_site_page_path(@site.code), :id => :code, :max_levels => 4, :path => 'pages/the_sortable_tree' %>
-
-
+%h1 Pages#index
+%p Find me in app/views/pages/index.html.haml

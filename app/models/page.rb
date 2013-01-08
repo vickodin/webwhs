@@ -25,7 +25,7 @@ class Page < ActiveRecord::Base
 
   accepts_nested_attributes_for :seo
 
-  attr_accessible :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :system, :url, :seo
+  attr_accessible :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :system, :url
 
   def title
   	self.name

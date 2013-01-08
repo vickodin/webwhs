@@ -11,6 +11,7 @@ gem 'sorcery'
 gem 'jquery-rails'
 
 gem 'simple_form'
+gem 'rmagick'
 gem 'carrierwave'
 gem 'awesome_nested_set'
 gem 'the_sortable_tree'

@@ -1,0 +1,7 @@
+= simple_form_for [:admin, @image] do |f|
+  = f.input :name
+  = f.association :album 
+  = f.file_field :picture
+  = f.hidden_field :picture_cache
+
+  = f.submit

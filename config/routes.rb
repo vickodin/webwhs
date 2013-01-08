@@ -20,6 +20,8 @@ Webwhs::Application.routes.draw do
         post :rebuild
       end
     end
+    resources :albums
+    resources :images
   end
 
   # The priority is based upon order of creation:

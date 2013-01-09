@@ -39,7 +39,6 @@ class Page < ActiveRecord::Base
   end
 
   def has_destroy_seo(cb_value)
-     puts "====================destroy SEO! #{cb_value}"
      if cb_value.to_i == 0
       self.seo_attributes = {:id => self.seo.id , :_destroy => '1'}
     end

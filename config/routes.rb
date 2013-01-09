@@ -23,6 +23,8 @@ Webwhs::Application.routes.draw do
     resources :images
   end
 
+  resource :feedback
+
   root :to => 'pages#index'
   
   match '*rest' => 'pages#show'

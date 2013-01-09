@@ -1,5 +1,24 @@
 = simple_form_for [:admin, @page] do |f|
-  = f.input :name
-  = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => "mini"}}
-  = render :partial => "shared/seo", :locals => {:f => f}
+
+  %p
+    %dl.tabs
+      %dd.active
+        %a{:href=>"#base"}
+          = t('page.def')
+      %dd
+        %a{:href=>"#seo"}
+          = t('seo.def')
+      %dd
+        %a{:href=>"#more"}
+          = t('page.more')
+    
+    %ul.tabs-content
+      %li#baseTab.active
+        = f.input :name
+        = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => "mini"}}
+      %li#seoTab
+        = render :partial => "shared/seo", :locals => {:f => f}
+      %li#moreTab
+        Put here redirect input
+      
   = f.submit

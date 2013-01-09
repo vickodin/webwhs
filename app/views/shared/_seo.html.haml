@@ -1,13 +1,4 @@
-.row
-  .span5
-    %a{href: "#", onclick: "$('#seo_block').toggle('slow');return false;"}
-      %strong Поисковая оптимизация
-.row &nbsp;
-%p.hide#seo_block
-  = f.fields_for :seo do |seo_f| 
-    = seo_f.label :title, :class => "colon"
-    = seo_f.text_field :title, :class => "span9", :placeholder => t('seo.title')
-    = seo_f.label :keywords, :class => "colon"
-    = seo_f.text_field :keywords, :class => "span9", :placeholder => t('seo.keywords')
-    = seo_f.label :description, :class => "colon"
-    = seo_f.text_area :description, :class => "span9", :size => "10x3", :placeholder => t('seo.description')
+= f.simple_fields_for :seo do |s| 
+  = s.input :title, :placeholder => t('seo.title')
+  = s.input :keywords, :as => :string, :placeholder => t('seo.keywords')
+  = s.input :description, :placeholder => t('seo.description'), :input_html => { :rows => 3 }

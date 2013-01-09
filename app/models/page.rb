@@ -23,9 +23,9 @@ class Page < ActiveRecord::Base
   before_save	:check_the_name
   has_one :seo, :as => :extra, :dependent => :destroy
 
-  accepts_nested_attributes_for :seo
+  accepts_nested_attributes_for :seo, :allow_destroy => true
 
-  attr_accessible :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :system, :url
+  attr_accessible :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :system, :url, :seo_attributes
 
   def title
   	self.name

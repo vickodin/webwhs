@@ -17,8 +17,9 @@
         = f.input :name
         = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => "mini"}}
       %li#seoTab
+        = f.input :has_seo, :as => :boolean, :value => @page.has_seo?, :input_html => {:checked => @page.has_seo? }, :label => t('page.use_seo')
         = render :partial => "shared/seo", :locals => {:f => f}
       %li#moreTab
-        Put here redirect input
+        = f.input :redirect, :placeholder => t('page.redirect')
       
   = f.submit

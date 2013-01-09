@@ -25,5 +25,7 @@ en:
   page:
     def: 'Page Content'
     more: 'More'
+    redirect: 'Redirect path'
+    use_seo:  'Use SEO parametrs?'
 
 

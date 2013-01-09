@@ -1,0 +1,4 @@
+= f.simple_fields_for :seo do |s| 
+  = s.input :title, :placeholder => t('seo.title')
+  = s.input :keywords, :as => :string, :placeholder => t('seo.keywords')
+  = s.input :description, :placeholder => t('seo.description'), :input_html => { :rows => 3 }

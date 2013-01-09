@@ -1,5 +1,25 @@
 = simple_form_for [:admin, @page] do |f|
-  = f.input :name
-  = f.input :content, :as => :ckeditor 
-  /:input_html => { :ckeditor => {:toolbar => "mini"}}
+
+  %p
+    %dl.tabs
+      %dd.active
+        %a{:href=>"#base"}
+          = t('page.def')
+      %dd
+        %a{:href=>"#seo"}
+          = t('seo.def')
+      %dd
+        %a{:href=>"#more"}
+          = t('page.more')
+    
+    %ul.tabs-content
+      %li#baseTab.active
+        = f.input :name
+        = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => "mini"}}
+      %li#seoTab
+        = f.input :has_seo, :as => :boolean, :value => @page.has_seo?, :input_html => {:checked => @page.has_seo? }, :label => t('page.use_seo')
+        = render :partial => "shared/seo", :locals => {:f => f}
+      %li#moreTab
+        = f.input :redirect, :placeholder => t('page.redirect')
+      
   = f.submit

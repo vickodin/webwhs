@@ -16,5 +16,7 @@
 
 class Site < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :active, :footer, :head, :name, :title, :translit
+  has_one :seo, :as => :extra, :dependent => :destroy
+  accepts_nested_attributes_for :seo, :allow_destroy => true
+  attr_accessible :active, :footer, :head, :name, :title, :translit, :seo_attributes
 end

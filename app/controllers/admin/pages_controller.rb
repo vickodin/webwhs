@@ -20,11 +20,13 @@ class Admin::PagesController < ApplicationController
 
   def new
     @page = Page.new
+    @page.build_seo
 
   end
 
   def edit
     @page = Page.find(params[:id])
+    @page.build_seo unless @page.seo
     #@page =  Page.find_by_code(params[:id])
   end
 
@@ -40,7 +42,8 @@ class Admin::PagesController < ApplicationController
 
   def update
     @page = Page.find(params[:id])
-    if @page.update_attributes(params[:page])
+    @page.has_destroy_seo(params[:page][:has_seo])
+    if @page.update_attributes!(params[:page])
       redirect_to :action => "index"
     else
       render :action => "edit"

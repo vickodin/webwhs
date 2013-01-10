@@ -39,7 +39,7 @@ class Page < ActiveRecord::Base
   end
 
   def has_destroy_seo(cb_value)
-     if cb_value.to_i == 0
+    if cb_value.to_i == 0
       self.seo_attributes = {:id => self.seo.id , :_destroy => '1'}
     end
   end
@@ -48,10 +48,7 @@ class Page < ActiveRecord::Base
 
   def check_the_name
   	unless self.system
-  		# if self.parent_id.blank?
-  		# 	reserved_names = ['sitemap','account','news','contacts','catalog','item','cart','checkout','login','logout','registration']
-
-  		
+  	  		
   	end
   	
   end

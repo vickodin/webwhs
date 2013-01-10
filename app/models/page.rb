@@ -38,7 +38,7 @@ class Page < ActiveRecord::Base
     self.has_seo #seo.blank?
   end
 
-  def has_destroy_seo(cb_value)
+  def destroy_seo(cb_value)
     if cb_value.to_i == 0
       self.seo_attributes = {:id => self.seo.id , :_destroy => '1'}
     end

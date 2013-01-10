@@ -47,7 +47,7 @@ class Admin::PagesController < ApplicationController
 
   def update
     @page = Page.find(params[:id])
-    @page.has_destroy_seo(params[:page][:has_seo])
+    @page.destroy_seo(params[:page][:has_seo])
     if @page.update_attributes!(params[:page])
       redirect_to :action => "index"
     else

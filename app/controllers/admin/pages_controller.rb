@@ -31,8 +31,13 @@ class Admin::PagesController < ApplicationController
   end
 
   def create
+    #check using seo
+    if params[:page][:has_seo].to_i  == 0
+      #if checkbox not set - remove seo attributes
+      params[:page].delete :seo_attributes
+    end
     @page = Page.new(params[:page])
-
+    
     if @page.save
       redirect_to :action => "index"
     else

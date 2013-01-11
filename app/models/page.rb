@@ -20,29 +20,31 @@ class Page < ActiveRecord::Base
   include TheSortableTree::Scopes
   acts_as_nested_set
 
-  before_save	:check_the_name
-  after_find  :init_has_seo
+  #after_find  :init_has_seo
   has_one :seo, :as => :extra, :dependent => :destroy
 
   accepts_nested_attributes_for :seo, :allow_destroy => true
 
-  attr_accessible :content, :depth, :lft, :menu, :name, :parent_id, :redirect, :rgt, :system, :url, :seo_attributes, :has_seo
+  attr_accessible :content, :menu, :name, :redirect, :system, :url, :seo_attributes, :use_seo,
+                  :depth, :lft, :parent_id, :rgt
 
-  attr_accessor :has_seo
+  attr_accessor :use_seo
+
+  before_save :check_the_name
 
   def title
   	self.name
   end
 
-  def has_seo?
-    self.has_seo #seo.blank?
-  end
+  #def has_seo?
+  #  self.has_seo #seo.blank?
+  #end
 
-  def destroy_seo(cb_value)
-    if cb_value.to_i == 0
-      self.seo_attributes = {:id => self.seo.id , :_destroy => '1'}
-    end
-  end
+  #def destroy_seo(cb_value)
+  #  if cb_value.to_i == 0
+  #    self.seo_attributes = {:id => self.seo.id , :_destroy => '1'}
+  #  end
+  #end
 
   private#===========================================
 
@@ -53,9 +55,9 @@ class Page < ActiveRecord::Base
   	
   end
 
-  def init_has_seo
-    @has_seo = !self.seo.nil?
-  end
+  #def init_has_seo
+  #  @has_seo = !self.seo.nil?
+  #end
 
   
 end

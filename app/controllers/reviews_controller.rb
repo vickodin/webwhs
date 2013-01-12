@@ -13,6 +13,6 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.page #order(:created_at)
+    @reviews = Review.page(params[:page]).per(5) #order(:created_at)
   end
 end

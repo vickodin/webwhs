@@ -24,7 +24,7 @@ Webwhs::Application.routes.draw do
   end
 
   resource :feedback
-
+  resources :reviews
   root :to => 'pages#index'
   
   match '*rest' => 'pages#show'

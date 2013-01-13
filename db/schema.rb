@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20130107154507) do
     t.string   "email"
     t.string   "url"
     t.text     "content"
+    t.boolean  "approved"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

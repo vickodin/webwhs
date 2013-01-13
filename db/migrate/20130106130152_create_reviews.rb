@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       t.string :email
       t.string :url
       t.text :content
+      t.boolean :approved
 
       t.timestamps
     end

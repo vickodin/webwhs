@@ -1,11 +1,12 @@
 Webwhs::Application.routes.draw do
+
   #get "sessions/new"
   get "login" => "sessions#new", :as => "login"
   #get "signup"
 
   resources :sessions
   resources :users
-
+ 
   namespace :admin do
     resource  :site
     resources :documents, :except => [:show]
@@ -24,6 +25,7 @@ Webwhs::Application.routes.draw do
   end
 
   resource :feedback
+  resources :reviews
 
   root :to => 'pages#index'
   

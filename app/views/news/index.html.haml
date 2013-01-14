@@ -1,0 +1,9 @@
+= paginate @news
+- for news in @news
+  .row
+    .one.columns 
+      = news.name
+    .two.columns
+      = link_to news.autourl
+    .eleven.columns 
+      = news.content

@@ -1,0 +1,8 @@
+= link_to t('user.review.new'), new_review_path
+= paginate @reviews
+- for review in @reviews
+  .row
+    .one.columns 
+      = review.name
+    .eleven.columns 
+      = review.content

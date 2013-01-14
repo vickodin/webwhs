@@ -1,5 +1,7 @@
 Webwhs::Application.routes.draw do
 
+  get "news/index"
+
   #get "sessions/new"
   get "login" => "sessions#new", :as => "login"
   #get "signup"
@@ -26,6 +28,7 @@ Webwhs::Application.routes.draw do
 
   resource :feedback
   resources :reviews
+  resources :news
 
   root :to => 'pages#index'
   
